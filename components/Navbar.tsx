@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+// import { ModeToggle } from "./mode-toggle";
 
 const Navbar = () => {
 	return (
@@ -15,6 +16,7 @@ const Navbar = () => {
 					<Link href="/">Home</Link>
 					<Link href="/">Events</Link>
 					<Link href="/">Create Event</Link>
+					{/* <ModeToggle /> */}
 				</ul>
 			</nav>
 		</header>
