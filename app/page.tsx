@@ -6,7 +6,11 @@ import { IEvent } from "@/database";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const Page = async () => {
-  const response = await fetch(`${BASE_URL}/api/events`);
+  const url = `${BASE_URL ? BASE_URL : ""}/api/events`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch events: ${response.status} ${response.statusText}`);
+  }
   const { events } = await response.json();
 
   return (
